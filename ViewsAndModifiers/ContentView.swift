@@ -7,10 +7,31 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CapsuleText: View {
+    var text: String
+
     var body: some View {
-        Text("Hello, world!")
+        Text(text)
+            .font(.largeTitle)
             .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .clipShape(Capsule())
+    }
+}
+
+struct ContentView: View {
+    
+    let motto1 = Text("Draco dormiens")
+    let motto2 = Text("nunquam titillandus")
+
+    var body: some View {
+        VStack(spacing: 10){
+            CapsuleText(text: "me")
+            CapsuleText(text: "k")
+        }
+        
+        
     }
 }
 
