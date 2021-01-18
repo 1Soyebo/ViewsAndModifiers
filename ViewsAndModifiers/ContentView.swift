@@ -19,6 +19,11 @@ struct Title: ViewModifier {
     }
 }
 
+extension View {
+    func titleStyle() -> some View {
+        self.modifier(Title())
+    }
+}
 
 
 //View Compositions
@@ -43,7 +48,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 10){
             motto2
-                .modifier(Title())
+                .titleStyle()
         }
         
         
